@@ -1,6 +1,7 @@
 # 1. Use an official OpenJDK image as the base
 # Change '17' to '21' or '11' depending on your Java version
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jre-alpine
+# or use -jre-slim if you prefer Debian-based slim images
 
 # 2. Set the working directory inside the container
 WORKDIR /app
