@@ -13,4 +13,4 @@ COPY coffee-shop-telegram-bot-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 
 # 5. Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
