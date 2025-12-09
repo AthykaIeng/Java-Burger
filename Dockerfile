@@ -6,11 +6,12 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # 3. Copy your compiled JAR file into the container
-# REPLACE 'target/my-app.jar' with the actual path to your jar
-COPY coffee-shop-telegram-bot-0.0.1-SNAPSHOT.jar
+# SOURCE (what to copy) -> DESTINATION (what to name it inside the container)
+COPY coffee-shop-telegram-bot-0.0.1-SNAPSHOT.jar app.jar
 
 # 4. Expose the port your app runs on (usually 8080 for Spring Boot)
 EXPOSE 8080
 
 # 5. Run the application
+# Use the generic name 'app.jar' here
 ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
